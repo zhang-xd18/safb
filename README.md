@@ -7,7 +7,7 @@ This is the PyTorch implementation of paper [Sensing-aided CSI Feedback with Dee
 To use this project, you need to ensure the following requirements are installed.
 
 - Python >= 3.9
-- [PyTorch == 1.10.0](https://pytorch.org/get-started/locally/)
+- [PyTorch == 1.10.0]([https://pytorch.org/get-started/locally/](https://pytorch.org/get-started/previous-versions/#v1100))
 - [thop](https://github.com/Lyken17/pytorch-OpCounter)
 
 ## Project Preparation
