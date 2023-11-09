@@ -35,7 +35,7 @@ parser.add_argument('--cpu-affinity', default=None, type=str,
 # Other arguments
 parser.add_argument('--epochs', type=int, metavar='N',
                     help='number of total epochs to run')
-parser.add_argument('--cr', metavar='N', type=int, default=4,
+parser.add_argument('--cr', metavar='N', type=int, default=64,
                     help='compression ratio')
 parser.add_argument('--scheduler', type=str, default='const',
                     help='learning rate scheduler')
