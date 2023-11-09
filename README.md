@@ -58,7 +58,7 @@ python /home/safb/main.py \
   --workers 0 \ 
   --cr 64 \  # compression ratio, typical values: 64, 128, 256
   --L 5 \ # number of scatters Ns, typical values: 5, 10
-  --scheduler cosine \ lr scheduler, chosen from ['cosine','const'], other schedulers can also be explored
+  --scheduler cosine \ # lr scheduler, chosen from ['cosine','const'], other schedulers can also be explored
   --gpu 0 \
   --root /home/results # path to save training log and checkpoints
 ```
