@@ -97,7 +97,7 @@ def init_model(args):
     elif args.mode == 'RE':
         image = torch.randn([1, 2, 32, 32])
         flops, params = thop.profile(model, inputs=(image,), verbose=False)
-    flops, params = thop.clever_format([flops, params], "%.3f")
+    flops, params = thop.clever_format([flops, params], "%.2f")
 
     # Model info logging
     logger.info(f'=> Model [pretrained: {args.pretrained}]')
