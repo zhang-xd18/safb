@@ -70,14 +70,14 @@ The main results reported in our paper are presented as follows. All the listed 
 ### Results for seperate training manner
 Number of <br> scatters | Compression <br> Ratio | FBNet | RENet | JNet-Sep | Params | FlOPs | Checkpoints
 :--: | :--: | :--: | :--: | :--: | :--: | :--: | :--:
-5 | 64 <br> 128 <br> 256 | -17.60 <br> -12.86 <br> -5.664 | -10.51 | -9.699 <br> -8.488 <br> -4.653 | 1.908M <br> 1.880M <br> 1.866M | 60.146K <br> 31.394K <br> 17.786K | FB-cr64-L5.pth + RE_L5.pth <br> FB-cr128-L5.pth + RE_L5.pth  <br> FB-cr256-L5.pth + RE_L5.pth |
-10 | 64 <br> 128 <br> 256 | -10.48 <br> -4.764 <br> -2.487 | -13.54 | -8.689 <br> -4.329 <br> -2.219 | 2.500M <br> 2.445M <br> 2.419M | 111.666K <br> 57.314K <br> 30.906K | FB-cr64-L10.pth + RE_L10.pth <br> FB-cr128-L10.pth + RE_L10.pth  <br> FB-cr256-L10.pth + RE_L10.pth |
+5 | 64 <br> 128 <br> 256 | -17.25 <br> -12.86 <br> -5.666 | -10.51 | -9.632 <br> -8.488 <br> -4.653 | 1.91M <br> 1.88M <br> 1.87M | 60.15K <br> 31.39K <br> 17.79K | FB-cr64-L5.pth + RE-L5.pth <br> FB-cr128-L5.pth + RE-L5.pth  <br> FB-cr256-L5.pth + RE-L5.pth |
+10 | 64 <br> 128 <br> 256 | -10.48 <br> -4.764 <br> -2.487 | -13.54 | -8.689 <br> -4.329 <br> -2.291 | 2.50M <br> 2.45M <br> 2.42M | 111.67K <br> 57.31K <br> 30.91K | FB-cr64-L10.pth + RE-L10.pth <br> FB-cr128-L10.pth + RE-L10.pth  <br> FB-cr256-L10.pth + RE-L10.pth |
 
 ### Results for joint training manner
 Number of <br> scatters | Compression <br> Ratio | JNet-Joint | Params | Flops | Checkpoints
 :--: | :--: | :--: | :--: | :--: | :--:
-5 | 64 <br> 128 <br> 256 | -9.826 <br> -8.459 <br> -4.314 | 1.908M <br> 1.880M <br> 1.866M | 60.146K <br> 31.394K <br> 17.786K | Joint_cr64_L5.pth <br> Joint_cr128_L5.pth  <br> Joint_cr256_L5.pth|
-10 | 64 <br> 128 <br> 256 | -9.207 <br> -5.393 <br> -2.582 | 2.500M <br> 2.445M <br> 2.419M | 111.666K <br> 57.314K <br> 30.906K | Joint_cr64_L10.pth <br> Joint_cr128_L10.pth <br> Joint_cr256_L10.pth |
+5 | 64 <br> 128 <br> 256 | -9.821 <br> -8.775 <br> -5.110 | 1.91M <br> 1.88M <br> 1.87M | 60.15K <br> 31.39K <br> 17.79K | Joint-cr64-L5.pth <br> Joint-cr128-L5.pth  <br> Joint-cr256-L5.pth|
+10 | 64 <br> 128 <br> 256 | -9.207 <br> -5.393 <br> -2.582 | 2.50M <br> 2.45M <br> 2.42M | 111.67K <br> 57.31K <br> 30.91K | Joint-cr64-L10.pth <br> Joint-cr128-L10.pth <br> Joint-cr256-L10.pth |
 
 
 As aforementioned, we provide model checkpoints for all the results. Our code library supports easy inference. 
