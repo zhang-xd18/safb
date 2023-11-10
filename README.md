@@ -19,7 +19,7 @@ You can also generate your own dataset based on the Saleh-Valenzuela channel mod
 
 #### B. Checkpoints Downloading
 
-The model checkpoints should be downloaded if you would like to reproduce our results. All the checkpoints files can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1Q3lJSlKeBoIQMu75dRqRYG_oC1SeA6OO?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1nkP7w78zmxpa8MjTcS7Wiw?pwd=9ehy).
+The model checkpoints should be downloaded if you would like to reproduce our results. All the checkpoints can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1Q3lJSlKeBoIQMu75dRqRYG_oC1SeA6OO?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1nkP7w78zmxpa8MjTcS7Wiw?pwd=9ehy).
 
 #### C. Project Tree Arrangement
 
@@ -37,9 +37,9 @@ home
 │   ├── H10_train.mat
 │   ├── ...
 ├── Checkpoints # The checkpoint folder
-│   ├── Joint_cr64_L5.pth
-│   ├── FB_cr64_L5.pth
-│   ├── RE_L5.pth
+│   ├── Joint-cr64-L5.pth
+│   ├── FB-cr64-L5.pth
+│   ├── RE-L5.pth
 │   ├── ...
 ├── run.sh  # The bash script
 ...
@@ -47,14 +47,14 @@ home
 
 ## Train Sensing-aided DL-based CSI feedback from Scratch
 
-An example of `run.sh` is listed below. Simply use it with `bash run.sh`. It will start the sensing-aided DL-based CSI feedback training from scratch. Change the training mode using `--mode` with  `Joint` for training in the joint manner, `FB` for training FBNet separately, and `RE` for training RENet separately, respectively. Change number of scatters using `--L` and change compression ratio with `--cr`. (Please remove the comments when using the `run.sh`)
+An example of `run.sh` is listed below. Simply use it with `bash run.sh`. It will start the sensing-aided DL-based CSI feedback training from scratch. Change the training mode using `--mode` with  `Joint` for training in the joint manner, `FB` for training FBNet, and `RE` for training RENet, respectively. Change number of scatters using `--L` and change compression ratio with `--cr`. An example file `run.sh` is also provided in the repository.
 
 ``` bash
 python /home/safb/main.py \
   --data-dir /home/SV \ # path to the dataset
   --mode Joint \ # training mode, chosen from ['FB','RE','Joint']
   --epochs 1000 \ # training epochs
-  --batch-size 200 \
+  -b 200 \  # batch size
   --workers 0 \ 
   --cr 64 \  # compression ratio, typical values: 64, 128, 256
   --L 5 \ # number of scatters Ns, typical values: 5, 10
@@ -65,7 +65,7 @@ python /home/safb/main.py \
 
 ## Results and Reproduction
 
-The main results reported in our paper are presented as follows. All the listed results can be found in Table II, Table III, and Table IV of our paper. They are achieved from training this sensing-aided DL-based CSI feedback scheme in a separate manner or in a joint manner. (Separate manner: 500 epochs for both FBNet and RENet. Joint manner: 1000 epochs. More details for training settings can be found in our paper.)
+The main results reported in our paper are presented as follows. All the listed results can be found in Table II, Table III, and Table IV of our paper. They are achieved from training this sensing-aided DL-based CSI feedback scheme in a separate manner or in a joint manner. (Separate manner: 500 epochs for both FBNet and RENet. Joint manner: 1000 epochs. More details for training can be found in our paper.)
 
 ### Results for seperate training manner
 Number of <br> scatters | Compression <br> Ratio | FBNet | RENet | JNet-Sep | Params | FlOPs | Checkpoints
@@ -82,13 +82,13 @@ Number of <br> scatters | Compression <br> Ratio | JNet-Joint | Params | Flops |
 
 As aforementioned, we provide model checkpoints for all the results. Our code library supports easy inference. 
 
-**To reproduce all these results, simple add `--evaluate` to `run.sh` and pick the corresponding pre-trained model(s) with `--pretrained`.** An example is shown as follows.
+**To reproduce all these results, simple add `--evaluate` to `run.sh` and pick the corresponding pre-trained model(s) with `--pretrained`.** An example is shown as follows. And an example file `eval.sh` is also provided in the repository.
 
 ``` bash
 python /home/safb/main.py \
     --data-dir /home/SV/ \ # path to the dataset
     --evaluate \ # flag for evaluate
-    -b 200 \
+    -b 200 \  # batch size
     --workers 0 \
     --cpu \
     --cr 64 \  # compression ratio, typical values: 64, 128, 256
@@ -96,7 +96,7 @@ python /home/safb/main.py \
     --mode Joint \  # inference mode, chosen from ['Joint', 'FB', 'RE']
     --root /home/results \ # path to save the log
     --pretrained /home/Checkpoints/Joint-cr64-L5.pth \ # path to the checkpoint
-    # [optional] --pretrained2 /home/Checkpoints/RE-L5.pth \ # to evaluate the feedback performance of the model trained in a separate manner, two pretrained models FBNet and RENet should be provided. MORE CLEAR EXAMPLES ARE PROVIDED IN THE REPOSITORY `eval.sh`.
+    # [optional] --pretrained2 /home/Checkpoints/RE-L5.pth \ # to evaluate the feedback performance of the model trained in a separate manner, two pretrained models FBNet and RENet should be provided. MORE CLEAR EXAMPLES ARE PROVIDED IN FILE `eval.sh`.
 ```
 
 ## Acknowledgment
