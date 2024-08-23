@@ -1,6 +1,6 @@
 ## Overview
 
-This is the PyTorch implementation of paper [Sensing-aided CSI Feedback with Deep Learning for Massive MIMO Systems](https://arxiv.org).
+This is the PyTorch implementation of paper [Sensing-aided CSI Feedback with Deep Learning for Massive MIMO Systems](https://ieeexplore.ieee.org/document/10622919).
 
 ## Requirements
 
